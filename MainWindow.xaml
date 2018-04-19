@@ -26,7 +26,7 @@
         <Button x:Name="OpenButton" Content="Открыть" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="74" Click="OpenButton_Click"/>
         <Label x:Name="InfoLabel" Content="" HorizontalAlignment="Left" Margin="48,441,0,0" VerticalAlignment="Top"/>
         <Button x:Name="SaveDefaultButton" Content="Сохранить" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="76" Click="SaveDefault"/>
-        <TextBox x:Name="SizeBox" HorizontalAlignment="Left" Height="24" Margin="595,454,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="29"/>
+        <TextBox x:Name="SizeBox" HorizontalAlignment="Left" Height="24" Margin="595,454,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="29" MaxLength="3" MaxLines="3"/>
         <Label Content="Размер шрифта" HorizontalAlignment="Left" Margin="499,450,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>

@@ -118,7 +118,11 @@ namespace TextEditor
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            try { RTB.FontSize = int.Parse(SizeBox.Text); }
+            
+            try {
+                RTB.FontSize = int.Parse(SizeBox.Text);
+                
+            }
             catch (Exception) { }
         }
     }
