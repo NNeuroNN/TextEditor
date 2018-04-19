@@ -1,0 +1,29 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700" ResizeMode="NoResize">
+    <Grid>
+        <RichTextBox x:Name="RTB" HorizontalAlignment="Left" Height="398" Margin="26,26,0,0" VerticalAlignment="Top" Width="624" RenderTransformOrigin="0.5,0.5" TextChanged="RichTextBox_TextChanged">
+            <RichTextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.083"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </RichTextBox.RenderTransform>
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="trybutt" Content="Сохранить" HorizontalAlignment="Left" Margin="578,441,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="1.655,0.125" Click="trybutt_Click"/>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="478,441,0,0" VerticalAlignment="Top" Width="74"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.exe.config
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.exe
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\bin\Release\TextEditor.pdb
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\MainWindow.g.cs
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\App.g.cs
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor_MarkupCompile.cache
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor_MarkupCompile.lref
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\MainWindow.baml
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.g.resources
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.Properties.Resources.resources
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csproj.GenerateResource.Cache
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csproj.CoreCompileInputs.cache
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.exe
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.pdb
+C:\Users\Алексей\source\repos\TextEditor\TextEditor\obj\Release\TextEditor.csprojResolveAssemblyReference.cache
