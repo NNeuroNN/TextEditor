@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="700" ResizeMode="NoResize">
-    <Grid>
-        <RichTextBox x:Name="RTB" HorizontalAlignment="Left" Height="398" Margin="26,26,0,0" VerticalAlignment="Top" Width="624" RenderTransformOrigin="0.5,0.5" TextChanged="RichTextBox_TextChanged">
+        Title="MainWindow" Height="537.5" Width="700" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-1">
+        <RichTextBox x:Name="RTB" HorizontalAlignment="Left" Height="398" Margin="35,47,0,0" VerticalAlignment="Top" Width="624" RenderTransformOrigin="0.5,0.5" TextChanged="RTB_TextChanged" VerticalScrollBarVisibility="Visible">
             <RichTextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,12 +18,30 @@
             </RichTextBox.RenderTransform>
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="RichTextBox"/>
+                    <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="trybutt" Content="Сохранить" HorizontalAlignment="Left" Margin="578,441,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="1.655,0.125" Click="trybutt_Click"/>
-        <Button Content="Открыть" HorizontalAlignment="Left" Margin="478,441,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="SaveButton" Content="Сохранить как" HorizontalAlignment="Left" Margin="196,10,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.655,0.125" Click="SaveButton_Click"/>
+        <Button x:Name="OpenButton" Content="Открыть" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="74" Click="OpenButton_Click"/>
+        <Label x:Name="InfoLabel" Content="" HorizontalAlignment="Left" Margin="48,441,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveDefaultButton" Content="Сохранить" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="76" Click="SaveDefault"/>
+        <TextBox x:Name="SizeBox" HorizontalAlignment="Left" Height="24" Margin="595,454,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="29"/>
+        <Label Content="Размер шрифта" HorizontalAlignment="Left" Margin="499,450,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.233"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="RefreshButton"   HorizontalAlignment="Left" Margin="630,453,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="RefreshButton_Click">
+            <StackPanel>
+                <Image Source="C:\Users\Алексей\source\repos\TextEditor\TextEditor\img\Refresh.jpeg"></Image>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

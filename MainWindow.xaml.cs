@@ -25,54 +25,102 @@ namespace TextEditor
         public MainWindow()
         {
             InitializeComponent();
+            TextAreaInit();
+        }
+        private TextArea Text;
+        bool access = false;
+        private void TextAreaInit() {
+            
+            Text = new TextArea();
+            Text.textChanged += TextChanged;
+            Text.Set(RTB, "test");
+            access = true;
         }
 
-        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+        void TextChanged(object sender, EventArgs e) {
+            InfoLabel.Content = " Символов:"+Text.CharCount.ToString();   
         }
 
-        private void trybutt_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             TextRange doc = new TextRange(RTB.Document.ContentStart, RTB.Document.ContentEnd);
-            doc.Text += doc.Text;
+            SaveDocument(doc.Text);
+        }
+
+        private void OpenButton_Click(object sender, RoutedEventArgs e)
+        {
+            WriteText();
 
         }
-        //   private void SaveDocument()
-        //    {
-        //        SaveFileDialog sfd = new SaveFileDialog();
-        //        sfd.Filter = "Text Files (*.txt)|*.txt|RichText Files (*.rtf)|*.rtf|XAML Files (*.xaml)|*.xaml|All files (*.*)|*.*";
-        //        if (sfd.ShowDialog() == true)
-        //        {
-        //            TextRange doc = new TextRange(RTB.Document.ContentStart, RTB.Document.ContentEnd);
-        //            using (FileStream fs = File.Create(sfd.FileName))
-        //            {
-        //                if (Path.GetExtension(sfd.FileName).ToLower() == ".rtf")
-        //                    doc.Save(fs, DataFormats.Rtf);
-        //                else if (Path.GetExtension(sfd.FileName).ToLower() == ".txt")
-        //                    doc.Save(fs, DataFormats.Text);
-        //                else
-        //                    doc.Save(fs, DataFormats.Xaml);
-        //            }
-        //        }
-        //}
-        //private void OpenDocument()
-        //{
-        //    OpenFileDialog ofd = new OpenFileDialog();
-        //    ofd.Filter = "Text(*.txt*)|*.txt*";
 
-        //    if (ofd.ShowDialog() == true)
-        //    {
-        //        TextRange doc = new TextRange(docBox.Document.ContentStart, docBox.Document.ContentEnd);
-        //        using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open))
-        //        {
 
-        //            else if (Path.GetExtension(ofd.FileName).ToLower() == ".txt")
-        //                doc.Load(fs, DataFormats.Text);
-        //            else
-        //                doc.Load(fs, DataFormats.Xaml);
-        //        }
-        //    }
-        //}
+        private void SaveDocument(string text)
+        {
+           
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text Files (*.txt)|*.txt";
+            if (sfd.ShowDialog() == true)
+            {
+                {
+                    StreamWriter sw = new StreamWriter(sfd.FileName);
+                    sw.Write(text);
+                    sw.Close();
+                    Text.SavePath = sfd.FileName;
+                }
+            }
+                
+            
+          
+        }
+        private void SaveDefault(string text) {
+            if (Text.SavePath == null)
+            {
+                SaveDocument(text);
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(Text.SavePath);
+                sw.Write(text);
+                sw.Close();
+            }
+        }
+
+        private void WriteText()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Text(*.txt*)|*.txt*";
+
+            if (ofd.ShowDialog() == true)
+            {
+                StreamReader strread = new StreamReader(ofd.FileName);
+                TextRange doc = new TextRange(RTB.Document.ContentStart, RTB.Document.ContentEnd);
+                doc.Text = strread.ReadToEnd();
+                strread.Close();
+            }
+        }
+
+        private void RTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (access)
+                Text.Refresh();
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void SaveDefault(object sender, RoutedEventArgs e)
+        {
+            TextRange doc = new TextRange(RTB.Document.ContentStart, RTB.Document.ContentEnd);
+            SaveDefault(doc.Text);
+        }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            try { RTB.FontSize = int.Parse(SizeBox.Text); }
+            catch (Exception) { }
+        }
     }
 }
+
